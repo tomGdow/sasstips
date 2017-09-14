@@ -1,0 +1,757 @@
+<div class="grid-container">
+  <div class="grid-x grid-margin-x">
+
+    <div class="small-12 medium-8  medium-offset-2  cell">
+      <p>Most of what follows is based on our notes from a  
+      <a href="https://teamtreehouse.com/">Treehouse</a> 
+      course given by 
+      <a href="http://www.hamptoncatlin.com/">Hampton Catlin</a>.  
+      It would seem this course is no longer available.
+      <strong>Sass was invented in 2006 by Hampton Catlin.</strong>
+      All examples should work with 
+      <a href="https://www.sassmeister.com/">sassmeister</a></p>
+      <h2>What We Know</h2>
+      <h4>1 Mixins</h4>
+      <p>Mixins are ‘functions’ that return css</p>
+
+      <pre>
+      <code>
+  //scss
+    @mixin my-mixn($color, $size) &#123;
+      color: $color;
+      font-size: $size;
+    &#125;   
+    .myclass&#123;
+      @include my-mixn(red, 20px);
+    &#125;
+
+  // css 
+    .myclass &#123;
+      color: red;
+      font-size: 20px;
+    &#125;
+      </code>
+      </pre>
+
+      <h4>2 Functions</h4>
+      <p>Functions are like mixins but they return a value, not css</p>
+      <pre><code>
+  //scss
+    @function mycalc($arg:10px)&#123;
+    @return $arg + 20px;
+    &#125;
+
+    .myclass &#123;
+      height: mycalc(30px);
+    &#125;
+
+  //css
+    .myclass &#123;
+      height: 50px;
+    &#125;
+      </code></pre>
+
+      <h4>3 Variables</h4>
+      <p>Variables begin with a dollar sign</p>
+
+      <pre><code>
+      $primary-color: #0078A0;   // rgb(0,120,160) blue
+      </code></pre>
+      <h4>6. Extend</h4>
+      <p class="space-on-top">The 
+      <code>h2</code>
+      selector extends
+      <code>h1</code>
+      </p>
+
+      <pre><code>
+  //scss
+      h1 &#123;
+          color:red;
+          background-color: green;
+        &#125;
+
+      h2 &#123;
+          @extend h1;
+          font-size: 20px;
+        &#125;
+
+      //css
+      h1, h2 &#123;
+        color: red;
+        background-color: green;
+      &#125;
+
+      h2 &#123;
+        font-size: 20px;
+      &#125;
+      </code></pre>
+
+      <p>
+      <code> Extend </code>
+      with placeholder (base class)</p>
+
+      <pre><code>
+  //scss
+    %heading-base &#123;
+      color:red;
+      background-color: green;
+    &#125;
+
+    h1 &#123;
+      @extend %heading-base;
+    &#125;
+
+    h2 &#123;
+      @extend %heading-base;
+      font-size: 20px;
+    &#125;
+
+  //css
+    h1, h2 &#123;
+      color: red;
+      background-color: green;
+    &#125;
+    h2 &#123;
+      font-size: 20px;
+    &#125; 
+      </code></pre>
+
+      <h4>7. Ampersand</h4>
+      <p>The &amp; references the parent selector. 
+      There are two basic types of use:</p>
+
+      <pre><code>
+  //scss
+      div &#123;
+        &amp;.myclass &#123;
+        background-color: red;   
+          &#125;
+       &#125;
+
+  //css 
+      div.myclass &#123;
+        background-color: red;
+      &#125;
+
+  and
+
+  //scss
+      div &#123;
+        .myclass2 &amp; &#123;
+          background-color: red;   
+        &#125;
+      &#125;
+
+  //css
+       .myclass2 div &#123;
+        background-color: red;
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">The following also works (since Sass 3.2?)
+      where 
+      <code>&amp;-new</code>
+      expands to
+      <code>.myclass-new</code>
+      </p>
+
+
+      <pre><code>
+  //scss
+      .myclass3 &#123;
+        &amp;-new &#123;
+          color: red;
+        &#125;
+      &#125;
+
+  //css
+      .myclass3-new &#123;
+        color: red;
+      &#125;
+      </code></pre>
+
+      <h4>8.Comments</h4>
+      <p>There are two types of comments:</p>
+      <pre><code>
+       //  This comments will not be visible in css
+
+      /*   This comments will be visible in css, 
+             but not in compact mode */
+
+      </code></pre>
+
+      <h4>9. Watch for Changes</h4>
+      <pre><code>
+      sass --watch .   // watch the current folder 
+      </code></pre>
+
+      <h4>10. Sass Libraries</h4>
+      <p>Compass:  <a href="http://compass-style.org/">http://compass-style.org/</a></p>
+      <p>Bourbon:  <a href="http://bourbon.io/">http://bourbon.io/</a></p>
+
+      <h4>11.  Sassmeister</h4>
+      <p><a href="https://www.sassmeister.com/">https://www.sassmeister.com/</a></p>
+      <p>Sassmeister was built by   <a href="http://jedfoster.com/code">Jed Foster</a>
+      and <a href="http://www.dalesande.com/">Dale Sande</a></p>
+
+      <h2>What We Missed</h2>
+      <h4> 12. Watch Alternatives</h4>
+      <pre><code>
+    sass --watch app.scss:app.css
+    sass --watch --style compressed mystyle.scss:mystyle.css
+    sass --watch --style compact mystyle.scss:mystyle.css
+    sass --style compressed mystyle.scss // write to console
+    sass --line-comments mystyle.scss  // line-comments in css. A goodie
+    sass --l  mystyle.scss  // line-comments, shorthand for above command
+    sass --watch .  // watch current folder
+      </code></pre>
+
+      <h4>13. Built-in functions.</h4>
+      <p>There are loads of these.</p>
+
+      <pre><code>
+  lighten($text-color, 30%)
+  darken($text-color, 30%)
+      </code></pre>
+      <p>There is a cheat-sheet 
+      <a href="https://gist.github.com/AllThingsSmitty/3bcc79da563df756be46">
+        here.</a></p>
+
+      <h4>14. If Then Else</h4>
+      <pre><code>
+  //scss
+      @mixin box_mixn($width) &#123;
+        @if $width &gt; 100px&#123;
+          padding: 0px;
+        &#125;
+        @else if $width == 100px &#123;
+            padding: 5px;
+        &#125;
+        @else &#123;
+          padding: 10px;
+        &#125;
+      &#125;
+
+      div &#123;
+        @include box_mixn(40px)
+      &#125;
+
+      //css
+      div &#123;
+        padding: 10px;
+      &#125;
+      </code></pre>
+
+      <h4>15. Interpolation</h4>
+      <p>Note 
+      <code>
+        #&#123; &hellip; &#125;
+      </code>
+      , just like Ruby,</p>
+
+      <pre><code>
+  //scss
+      @mixin color_class_mixn ($tag, $color) &#123;
+        .#&#123;$tag&#125;.color&#123;
+          color: $color;
+          background-image: url("images/#&#123;$color&#125;.jpg");
+          @if $color == red &#123;
+            border: 1px solid black;
+          &#125;
+        &#125;
+      &#125;
+
+      @include color_class_mixn(sidebar, blue);
+
+      //css
+      .sidebar.color &#123;
+         color: blue;
+         background-image: url("images/blue.jpg");
+      &#125;
+      </code></pre>
+
+      <h4>16.  For loop</h4>
+      <pre><code>
+  //scss
+      @for $i from 1 through 100 &#123;
+        .box:nth-child(#&#123;$i&#125;) &#123;
+          background-color: darken(white, $i);
+        &#125;
+      &#125;
+
+  //css 
+      .box:nth-child(1) &#123;
+        background-color: #fcfcfc;
+      &#125;
+
+      .box:nth-child(2) &#123;
+        background-color: #fafafa;
+      &#125;
+
+      ...
+
+      .box:nth-child(100) &#123;
+        background-color: black;
+      &#125;
+      </code></pre>
+
+      <h4>17. Each Loop</h4>
+      <pre><code>
+  //scss
+      @each $member in thom, jonny, colin, phil &#123;
+        .bankmanager.#&#123;$member&#125; &#123;
+          background: url(&quot;images/#&#123;$member&#125;&quot;);
+        &#125;
+      &#125;
+
+      //css
+      .bankmanager.thom &#123;
+        background: url(&quot;images/thom&quot;);
+      &#125;
+
+      .bankmanager.jonny &#123;
+        background: url(&quot;images/jonny&quot;);
+      &#125;
+
+      .bankmanager.colin &#123;
+        background: url(&quot;images/colin&quot;);
+      &#125;
+
+      .bankmanager.phil &#123;
+        background: url(&quot;images/phil&quot;);
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      <code>Each</code>
+      loop within 
+      <code>mixin</code>. 
+      This is better (but 
+      <em>must</em> 
+      have 4 arguments).</p>
+
+      <pre><code>
+  //scss
+      @mixin band ($a, $b, $c, $d) &#123;
+        @each $member in $a, $b, $c, $d&#123;
+          .bandmember.#&#123;$member&#125; &#123;
+            background: url("images/#&#123;$member&#125;");
+            &#125;
+          &#125;
+        &#125;
+
+      @include band(thom, johnny, colin, phil);
+
+      </code></pre>
+
+      <p class="space-on-top">
+      <code>Each</code>
+      loop within 
+      <code>mixin</code>
+      with any number of arguments.
+      This is even better. 
+      </p>
+
+      <pre><code>
+  @mixin band2 ($members...) &#123;
+    @each $member in $members &#123;
+      .bandmember.#&#123;$member&#125; &#123;
+        background: url(&quot;images/#&#123;$member&#125;&quot;);
+      &#125;
+    &#125;
+  &#125;
+
+  @include band2(thom, johnny, colin, phil);
+      </code></pre>
+
+      <p class="space-on-top">Even better still:</p>
+      <pre><code>
+      @mixin band3 ($name, $members...) &#123;
+        @each $member in $members &#123;
+          .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
+          background: url(&quot;images/#&#123;$member&#125;&quot;);
+          &#125;
+        &#125;
+      &#125;
+      @include band3(webheads, josef, emer, thomas);
+      </code></pre>
+
+      <p class="space-on-top">
+      This will work, but it  is NOT recommended:</p>
+      <pre><code>
+  //scss
+      @mixin band4 ($name, $members) &#123;
+        @each $member in $members &#123;
+          .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
+            background: url(&quot;images/#&#123;$member&#125;&quot;);
+          &#125;
+        &#125;
+      &#125;
+
+      @include band4(webheads, josef emer thomas);
+      </code></pre>
+
+      <h4>18.  Mixins with Optional Arguments</h4>
+      <p class="space-on-top">
+      This works, but the order of the arguments given to 
+      the mixin is important:</p>
+      <pre><code>
+  //scss
+      @mixin box($size, $color) &#123;
+        width: $size;
+        height: $size;
+        background: $color;
+      &#125;
+
+      .myclass &#123;
+        @include box(10px, blue); // Order of args matter
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      The solution is to use optional arguments (mixin as above).
+      </p>
+
+      <pre><code>
+  //scss
+      .myclass&#123;
+      @include box($color:blue, $size:10px);
+  &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      In addition, default values can be given to mixin arguments.
+      </p>
+
+      <pre><code>
+  //scss
+      @mixin box2($size:100px, $color:red, $display:block) &#123;
+        width: $size;
+        height: $size;
+        background: $color;
+        display: $display;
+      &#125;
+
+      .box1 &#123;
+        @include box2();
+      &#125;
+      .box2 &#123;
+        @include box2($display:inline);
+      &#125;
+      .box3 &#123;
+        @include box2($display: block, $size:200px, $color:green);
+      &#125;
+      .box4 &#123;
+        @include box2(100px, red);
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      <code> Null</code> 
+      may be given as as mixin default argument</p>
+      <pre><code>
+  //scss
+      @mixin color ($height: null, $width: null)
+        &#123;
+        height: $height;
+        width : $width;
+        color: yellow;
+      &#125;
+
+      .block &#123;
+        @include color($height:10px)
+      &#125;
+
+      //css
+      .block &#123;
+        height: 10px;
+        color: yellow;
+      &#125;
+      </code></pre>
+
+      <h4>19.  Include Warning Message in Mixin</h4>
+      <p class="space-on-top">
+      The message will appear in 
+      <code>sass-watch</code>
+      output. 
+      </p>
+      <pre><code>
+  //scss
+      @mixin old  &#123;
+        @warn "please use new version of this mixin";
+        height: 100px;
+        &#125;
+
+      h1 &#123;
+        @include old;
+      &#125;
+      </code></pre>
+
+      <h2>What We Definitely Missed</h2>
+
+      <p>Taken mainly from notes on  
+      <a href="https://teamtreehouse.com/">
+        Treehouse</a> 
+      advanced Sass course given by 
+      <a href="http://www.dalesande.com/">
+        Dale Sande</a>
+      .</p>
+
+      <h4>20. List Maps</h4>
+      <p>List-maps gets rid of global variables.  The way to go?
+      Use
+      <code>map-get()</code>
+      to retrieve values from a list-map</p>
+
+      <pre><code>
+    //scss
+        $colors: (
+        primary: #FA6ACC,
+        secondary: #F02A52,
+        nav-bar: #09A6E4);
+
+      div &#123;
+        background-color: map-get($colors, primary);
+        color: rgba(map-get($colors, secondary), 0.4);
+      &#125;
+
+    // css
+      div &#123;
+        background-color: #FA6ACC;
+        color: rgba(240, 42, 82, 0.4);
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">Useful function: 
+      <code>map-deep-get()</code>
+      (see:  
+      <a href="https://css-tricks.com/snippets/sass/deep-getset-maps/">
+        here</a>
+      )</p>
+
+      <pre><code>
+  //scss
+      $colors: (
+        primary: #FA6ACC,
+        secondary: #F02A52,
+        nav-bar: (
+        primary: green,
+        secondary: red)
+        );
+
+      @function map-deep-get($map, $keys...) &#123;
+        @each $key in $keys &#123;
+          $map: map-get($map, $key);
+        &#125;
+          @return $map;
+        &#125;
+
+      .nav &#123;    
+          color: map-deep-get($colors, nav-bar, primary);
+        &#125;
+
+  //css
+      .nav &#123;
+        color: green;
+      &#125;
+      </code></pre>
+
+      <h4>21.  Pass Code Block to Mixin</h4>
+      <p>
+      The
+      <code>@content</code>
+      directive allows a code block to be passed to a mixin (or function?). 
+      A super-goodie.</p>
+      <p>Good example (see  <a href="https://robots.thoughtbot.com/sasss-content-directive">here</a>)</p>
+
+      <pre><code>
+  /scss
+      @mixin media($width) &#123;
+        @media only screen and (max-width: $width) &#123;
+          @content;
+        &#125;
+      &#125;
+
+      @include media(320px) &#123;
+        background: red;
+      &#125;
+
+      //css 
+      @media only screen and (max-width: 320px) &#123;
+        background: red;
+      &#125;
+      </code></pre>
+
+      <h4>22.  Scoping with !default and !global</h4>
+      <p>Note local scoping within the css rule:</p>
+      <pre><code>
+  //scss
+      $text-color: blue;
+       .block &#123;
+          $text-color: red;
+          color: $text-color;
+        &#125;
+
+      .block2&#123;
+        color: $text-color;
+      &#125;
+
+      //css
+      .block &#123;
+        color: red;
+      &#125;
+
+      .block2 &#123;
+        color: blue;
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">Putting 
+      <code>!default</code>
+      at the end of a variable declaration ensures 
+      that if a variable is already assiged it will not be over-written, 
+      <em>unless</em> 
+      the original assignment is to 
+      <code>Null</code> 
+      (in which case it will be over-written).</p>
+
+      <pre><code>
+  //scss
+      $text-color: blue;
+      $text-color: red !default;
+
+      .block &#123;
+        color: $text-color;
+      &#125;
+
+      //css
+      .block &#123;
+        color: blue;
+      &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      Create a global variable from within a css rule with
+      <code>!global</code>
+      </p>
+
+      <pre><code>
+  //scss
+      .block &#123;
+        $text-color: green !global;
+      &#125;
+
+      .block2 &#123;
+        color: $text-color;
+      &#125;
+
+      //css
+      .block2 &#123;
+        color: green;
+      &#125;
+      </code></pre>
+
+      <h4>23.  Introspection</h4>
+      <pre><code>
+  //scss
+      @mixin test() &#123;  
+        @if function-exists(myfunction)&#123;
+          height: 10px;
+        &#125;
+        @else &#123;
+          height: 30px;
+        &#125;
+      &#125;
+
+      .block &#123; 
+        @include test
+      &#125;
+
+  //css
+      .block &#123;
+        height: 30px;
+      &#125;
+      </code></pre>
+
+      <h4>24. String Functions</h4>
+      <p>There are loads of these.</p>
+
+      <pre><code>
+
+  //scss
+      $list: 'this is list of words', 'more words', 'and more more words';
+        .block &#123;
+          $strings: str-length(nth($list,2));
+          height: #&#123;$strings&#125;px;
+          sel: to-upper-case(nth($list, 2));
+      &#125;
+
+  //css
+      .block &#123;
+        height: 10px;
+        sel: "MORE WORDS";
+      &#125;
+      </code></pre>
+
+      <h4>25. Persistently Edit Sass from Chrome Browser</h4>
+      <p>Start a server from within app folder containing 
+      <code>index.html</code>
+      For example, 
+      <code>http-server</code>
+      </p>
+          <p>localhost: <a href="http://172.28.128.3:8080/">http://172.28.128.3:8080/</a></p>
+          <p>Need to be running chrome on development machine</p>
+          <p>Have <code>sass -- watch</code> running for updates to take effect.</p>
+          <p>From chrome create workspace as follows :</p>
+          <p>Development Tools (Shift-Control-I) -&gt; Sources -&gt; Right-Click on App folder  (here labelled 172.28.128.3:8000) -&gt; ‘Add app folder to workspace’  Browse to App folder</p>
+        <p>Still in Chrome/sources, Find &lt;app&gt;.scss file and choose ‘Map to network resource’ by right-clicking</p>
+        <p>Edit scss file from Chrome, and save changes to ‘see’ effects.   A goodie.</p>
+
+      <h4>26. Miscellaneous</h4>
+      <strong>css-reset</strong> 
+      by Eric Meyers: 
+      <a href="https://meyerweb.com/eric/tools/css/reset/">
+        Eric Meyers </a>
+      (See Paul Cheney, Pluralsight, 
+      <a href="C:%5CUsers%5CThomas%5CPluralsight%5Csass_cheney_psight">
+        Aspen Dental/Sass Videos</a> 
+      )
+
+      <p><strong>koala</strong>: <a href="http://koala-app.com/">http://koala-app.com/</a> (GUI for Sass, Compass).  Used in  <a href="C:%5CUsers%5CThomas%5CPluralsight%5Csass_cheney_psight">Aspen Dental/Sass Videos</a></p>
+
+      <p><strong>sass-globbing gem</strong></p>
+      <p>sass globbing gem auto included in Rails</p>
+
+      <pre><code>
+      gem install sass-globbing
+      // can now do the following: 
+      @import &quot;mixins/*
+      // but need to run 
+      sass -r sass-globbing --watch   
+      </code></pre>
+
+      <p><strong>Recommendation</strong></p>
+      <p>Create application.scss as core manifest file put in all 
+      @imports</p>
+      <p><strong>Underscore and dash in variable names</strong></p>
+      <p>For historical reasons, variable name 
+      (and all other Sass identifiers)  
+      can use hyphens and underscores interchangeably.  
+      For example, if you define a variable called 
+      <code>$main-width</code>,  
+      you can access it as 
+      <code>$main_width</code>  
+      (and vice versa)</p>
+
+      <p>(see also (on xubuntu) 
+      <a href="/home/tomgdow/acp/sass-with-josef/hampton_catlin_revisited">/home/tomgdow/acp/sass-with-josef/hampton_catlin_revisited</a>)</p>
+      <p>JZ/TGD/14-7-2017/</p>
+
+    </div> <!--end-cell-->
+  </div> <!--end grid-x-->
+</div> <!--end grid-container-->
+
+
+
+
