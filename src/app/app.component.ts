@@ -10,6 +10,6 @@ import 'foundation-sites/';
 export class AppComponent {
   title = 'Sass Tips';
   ngAfterViewInit() {
-        $(document).foundation();
+    $(document).foundation();
   }
 }
