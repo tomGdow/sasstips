@@ -9,6 +9,8 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
+  bonnie="/assets/images/bonnie2.jpeg";
+
   ngOnInit() {
   }
 
