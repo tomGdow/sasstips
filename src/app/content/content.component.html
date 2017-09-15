@@ -2,7 +2,7 @@
   <div class="grid-x grid-margin-x">
 
     <div class="small-12 medium-8  medium-offset-2  cell">
-      <p>Most of what follows is based on our notes from a  
+      <p>Most of what follows is based on notes from an on-line  
       <a href="https://teamtreehouse.com/">Treehouse</a> 
       course given by 
       <a href="http://www.hamptoncatlin.com/">Hampton Catlin</a>.  
@@ -13,7 +13,7 @@
 
       <h2>What We Know</h2>
       <h4 id="part1">1 Mixins</h4>
-      <p>Mixins are ‘functions’ that return css</p>
+      <p>Mixins are ‘functions’ that return css.</p>
 
       <pre>
       <code>
@@ -30,8 +30,7 @@
     .myclass &#123;
       color: red;
       font-size: 20px;
-    &#125;
-      </code>
+    &#125; </code>
       </pre>
 
       <h4 id="part2">2 Functions</h4>
@@ -53,7 +52,7 @@
       </code></pre>
 
       <h4 id="part3">3 Variables</h4>
-      <p>Variables begin with a dollar sign</p>
+      <p>Variables begin with a dollar sign.</p>
 
       <pre><code>
       $primary-color: #0078A0;   // rgb(0,120,160) blue
@@ -78,7 +77,7 @@
       <p>Partials are named with an underscore.
       (
       <code>_uname.scss</code>
-      , for example)
+      , for example). 
       </p>
       <pre><code>
     @import &quot;uname&quot;;
@@ -104,7 +103,7 @@
           font-size: 20px;
         &#125;
 
-      //css
+  //css
       h1, h2 &#123;
         color: red;
         background-color: green;
@@ -200,11 +199,11 @@
       </code></pre>
 
       <h4 id="part8">8 Comments</h4>
-      <p>There are two types of comments:</p>
+      <p>There are two types of comments.</p>
       <pre><code>
-       //  This comments will not be visible in css
+       // This comments will not be visible in css
 
-      /*   This comments will be visible in css, 
+      /* This comments will be visible in css, 
              but not in compact mode */
 
       </code></pre>
@@ -230,8 +229,8 @@
     sass --watch --style compressed mystyle.scss:mystyle.css
     sass --watch --style compact mystyle.scss:mystyle.css
     sass --style compressed mystyle.scss // write to console
-    sass --line-comments mystyle.scss  // line-comments in css. A goodie
-    sass --l  mystyle.scss  // line-comments, shorthand for above command
+    sass --line-comments mystyle.scss  // line-comments in css.
+    sass --l mystyle.scss  // line-comments, shorthand for above.
     sass --watch .  // watch current folder
       </code></pre>
 
@@ -246,7 +245,7 @@
       <a href="https://gist.github.com/AllThingsSmitty/3bcc79da563df756be46">
         here.</a></p>
 
-      <h4 id="part14">14 If Then Else</h4>
+      <h4 id="part14">14 If Else</h4>
       <pre><code>
   //scss
       @mixin box_mixn($width) &#123;
@@ -265,7 +264,7 @@
         @include box_mixn(40px)
       &#125;
 
-      //css
+  //css
       div &#123;
         padding: 10px;
       &#125;
@@ -292,7 +291,7 @@
 
       @include color_class_mixn(sidebar, blue);
 
-      //css
+  //css
       .sidebar.color &#123;
          color: blue;
          background-image: url("images/blue.jpg");
@@ -393,7 +392,7 @@
   @include band2(thom, johnny, colin, phil);
       </code></pre>
 
-      <p class="space-on-top">Even better still:</p>
+      <p class="space-on-top">Even better still.</p>
       <pre><code>
       @mixin band3 ($name, $members...) &#123;
         @each $member in $members &#123;
@@ -406,7 +405,7 @@
       </code></pre>
 
       <p class="space-on-top">
-      This will work, but it  is NOT recommended:</p>
+      This will work, but it  is NOT recommended.</p>
       <pre><code>
   //scss
       @mixin band4 ($name, $members) &#123;
@@ -518,7 +517,7 @@
 
       <h2>What We Definitely Missed</h2>
 
-      <p>Taken mainly from notes on  
+      <p>Taken mainly from notes on a 
       <a href="https://teamtreehouse.com/">
         Treehouse</a> 
       advanced Sass course given by 
@@ -553,10 +552,10 @@
 
       <p class="space-on-top">Useful function: 
       <code>map-deep-get()</code>
-      (see:  
+      (see  
       <a href="https://css-tricks.com/snippets/sass/deep-getset-maps/">
         here</a>
-      )</p>
+      ).</p>
 
       <pre><code>
   //scss
@@ -790,8 +789,14 @@
       you can access it as 
       <code>$main_width</code>  
       (and vice versa)</p>
-      <strong>JZ/TGD/14-7-2017/</strong>
 
+      <h4 id="part27">27 Links</h4>
+      <p>
+      <a href="https://github.com/tomGdow/sasstips">sasstips</a>
+      on
+      <a href="https://github.com/tomGdow?tab=repositories">Github</a>
+      </p>
+      <strong>JZ/TGD/14-7-2017/</strong>
     </div> <!--end-cell-->
   </div> <!--end grid-x-->
 </div> <!--end grid-container-->
