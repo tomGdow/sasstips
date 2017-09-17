@@ -28,19 +28,19 @@
       <pre>
       <code>
   //scss
-    @mixin my-mixn($color, $size) &#123;
-      color: $color;
-      font-size: $size;
-    &#125;   
-    .myclass&#123;
-      @include my-mixn(red, 20px);
-    &#125;
+  @mixin my-mixn($color, $size) &#123;
+    color: $color;
+    font-size: $size;
+  &#125;   
+  .myclass&#123;
+    @include my-mixn(red, 20px);
+  &#125;
 
   // css 
-    .myclass &#123;
-      color: red;
-      font-size: 20px;
-    &#125; </code>
+  .myclass &#123;
+    color: red;
+    font-size: 20px;
+  &#125; </code>
       </pre>
 
       <h4 id="part2">
@@ -57,18 +57,18 @@
       <p>Functions are like mixins but they return a value, not css</p>
       <pre><code>
   //scss
-    @function mycalc($arg:10px)&#123;
+  @function mycalc($arg:10px)&#123;
     @return $arg + 20px;
-    &#125;
+  &#125;
 
-    .myclass &#123;
-      height: mycalc(30px);
-    &#125;
+  .myclass &#123;
+    height: mycalc(30px);
+  &#125;
 
   //css
-    .myclass &#123;
-      height: 50px;
-    &#125;
+  .myclass &#123;
+    height: 50px;
+  &#125;
       </code></pre>
 
       <h4 id="part3">
@@ -85,7 +85,7 @@
       <p>Variables begin with a dollar sign.</p>
 
       <pre><code>
-      $primary-color: #0078A0;   // rgb(0,120,160) blue
+  $primary-color: #0078A0;   // rgb(0,120,160) blue
       </code></pre>
 
       <h4 id="part4">
@@ -101,16 +101,16 @@
       </h4>
       <pre><code>
   //scss
-      div &#123;
-        .myclass &#123;
-          background-color: red;   
-        &#125;
-      &#125;
+  div &#123;
+    .myclass &#123;
+      background-color: red;   
+    &#125;
+  &#125;
 
   // css
-      div .myclass &#123;
-        background-color: red;
-      &#125;
+  div .myclass &#123;
+    background-color: red;
+  &#125;
       </code></pre>
       <h4 id="part5">
         <a href="#navbar">
@@ -144,7 +144,7 @@
            title="Return to Menu">
             6 Extend</span></a>
       </h4>
-      <p class="space-on-top">The 
+      <p>The 
       <code>h2</code>
       selector extends
       <code>h1</code>
@@ -152,55 +152,55 @@
 
       <pre><code>
   //scss
-      h1 &#123;
-          color:red;
-          background-color: green;
-        &#125;
-
-      h2 &#123;
-          @extend h1;
-          font-size: 20px;
-        &#125;
-
-  //css
-      h1, h2 &#123;
-        color: red;
-        background-color: green;
-      &#125;
-
-      h2 &#123;
-        font-size: 20px;
-      &#125;
-      </code></pre>
-
-      <p>
-      <code> Extend </code>
-      with placeholder (base class)</p>
-
-      <pre><code>
-  //scss
-    %heading-base &#123;
+  h1 &#123;
       color:red;
       background-color: green;
     &#125;
 
-    h1 &#123;
-      @extend %heading-base;
-    &#125;
-
-    h2 &#123;
-      @extend %heading-base;
+  h2 &#123;
+      @extend h1;
       font-size: 20px;
     &#125;
 
   //css
-    h1, h2 &#123;
-      color: red;
-      background-color: green;
-    &#125;
-    h2 &#123;
-      font-size: 20px;
-    &#125; 
+  h1, h2 &#123;
+    color: red;
+    background-color: green;
+  &#125;
+
+  h2 &#123;
+    font-size: 20px;
+  &#125;
+      </code></pre>
+
+      <p class="space-on-top">
+      <code>Extend</code>
+      with placeholder (base class)</p>
+
+      <pre><code>
+  //scss
+  %heading-base &#123;
+    color:red;
+    background-color: green;
+  &#125;
+
+  h1 &#123;
+    @extend %heading-base;
+  &#125;
+
+  h2 &#123;
+    @extend %heading-base;
+    font-size: 20px;
+  &#125;
+
+  //css
+  h1, h2 &#123;
+    color: red;
+    background-color: green;
+  &#125;
+  h2 &#123;
+    font-size: 20px;
+  &#125; 
       </code></pre>
       <h4 id="part7">
         <a href="#navbar">
@@ -218,30 +218,30 @@
 
       <pre><code>
   //scss
-      div &#123;
-        &amp;.myclass &#123;
-        background-color: red;   
-          &#125;
-       &#125;
+  div &#123;
+    &amp;.myclass &#123;
+    background-color: red;   
+      &#125;
+   &#125;
 
   //css 
-      div.myclass &#123;
-        background-color: red;
-      &#125;
+  div.myclass &#123;
+    background-color: red;
+  &#125;
 
   and
 
   //scss
-      div &#123;
-        .myclass2 &amp; &#123;
-          background-color: red;   
-        &#125;
-      &#125;
+  div &#123;
+    .myclass2 &amp; &#123;
+      background-color: red;   
+    &#125;
+  &#125;
 
   //css
-       .myclass2 div &#123;
-        background-color: red;
-      &#125;
+   .myclass2 div &#123;
+    background-color: red;
+  &#125;
       </code></pre>
 
       <p class="space-on-top">The following also works (since Sass 3.2?)
@@ -254,16 +254,16 @@
 
       <pre><code>
   //scss
-      .myclass3 &#123;
-        &amp;-new &#123;
-          color: red;
-        &#125;
-      &#125;
+  .myclass3 &#123;
+    &amp;-new &#123;
+      color: red;
+    &#125;
+  &#125;
 
   //css
-      .myclass3-new &#123;
-        color: red;
-      &#125;
+  .myclass3-new &#123;
+    color: red;
+  &#125;
       </code></pre>
 
       <h4 id="part8">
@@ -279,10 +279,10 @@
       </h4>
       <p>There are two types of comments.</p>
       <pre><code>
-       // This comments will not be visible in css
+   // This comments will not be visible in css
 
-      /* This comments will be visible in css, 
-             but not in compact mode */
+  /* This comments will be visible in css, 
+         but not in compact mode */
 
       </code></pre>
 
@@ -343,13 +343,13 @@
             12 Watch Alternatives</span></a>
       </h4>
       <pre><code>
-    sass --watch app.scss:app.css
-    sass --watch --style compressed mystyle.scss:mystyle.css
-    sass --watch --style compact mystyle.scss:mystyle.css
-    sass --style compressed mystyle.scss // write to console
-    sass --line-comments mystyle.scss  // line-comments in css.
-    sass --l mystyle.scss  // line-comments, shorthand for above.
-    sass --watch .  // watch current folder
+  sass --watch app.scss:app.css
+  sass --watch --style compressed mystyle.scss:mystyle.css
+  sass --watch --style compact mystyle.scss:mystyle.css
+  sass --style compressed mystyle.scss // write to console
+  sass --line-comments mystyle.scss  // line-comments in css.
+  sass --l mystyle.scss  // line-comments, shorthand for above.
+  sass --watch .  // watch current folder
       </code></pre>
 
       <h4 id="part13">
@@ -386,26 +386,26 @@
       </h4>
       <pre><code>
   //scss
-      @mixin box_mixn($width) &#123;
-        @if $width &gt; 100px&#123;
-          padding: 0px;
-        &#125;
-        @else if $width == 100px &#123;
-            padding: 5px;
-        &#125;
-        @else &#123;
-          padding: 10px;
-        &#125;
-      &#125;
+  @mixin box_mixn($width) &#123;
+    @if $width &gt; 100px&#123;
+      padding: 0px;
+    &#125;
+    @else if $width == 100px &#123;
+        padding: 5px;
+    &#125;
+    @else &#123;
+      padding: 10px;
+    &#125;
+  &#125;
 
-      div &#123;
-        @include box_mixn(40px)
-      &#125;
+  div &#123;
+    @include box_mixn(40px)
+  &#125;
 
   //css
-      div &#123;
-        padding: 10px;
-      &#125;
+  div &#123;
+    padding: 10px;
+  &#125;
       </code></pre>
 
       <h4 id="part15">
@@ -427,23 +427,23 @@
 
       <pre><code>
   //scss
-      @mixin color_class_mixn ($tag, $color) &#123;
-        .#&#123;$tag&#125;.color&#123;
-          color: $color;
-          background-image: url("images/#&#123;$color&#125;.jpg");
-          @if $color == red &#123;
-            border: 1px solid black;
-          &#125;
-        &#125;
+  @mixin color_class_mixn ($tag, $color) &#123;
+    .#&#123;$tag&#125;.color&#123;
+      color: $color;
+      background-image: url("images/#&#123;$color&#125;.jpg");
+      @if $color == red &#123;
+        border: 1px solid black;
       &#125;
+    &#125;
+  &#125;
 
-      @include color_class_mixn(sidebar, blue);
+  @include color_class_mixn(sidebar, blue);
 
   //css
-      .sidebar.color &#123;
-         color: blue;
-         background-image: url("images/blue.jpg");
-      &#125;
+  .sidebar.color &#123;
+     color: blue;
+     background-image: url("images/blue.jpg");
+  &#125;
       </code></pre>
 
       <h4 id="part16">
@@ -459,26 +459,26 @@
       </h4>
       <pre><code>
   //scss
-      @for $i from 1 through 100 &#123;
-        .box:nth-child(#&#123;$i&#125;) &#123;
-          background-color: darken(white, $i);
-        &#125;
-      &#125;
+  @for $i from 1 through 100 &#123;
+    .box:nth-child(#&#123;$i&#125;) &#123;
+      background-color: darken(white, $i);
+    &#125;
+  &#125;
 
   //css 
-      .box:nth-child(1) &#123;
-        background-color: #fcfcfc;
-      &#125;
+  .box:nth-child(1) &#123;
+    background-color: #fcfcfc;
+  &#125;
 
-      .box:nth-child(2) &#123;
-        background-color: #fafafa;
-      &#125;
+  .box:nth-child(2) &#123;
+    background-color: #fafafa;
+  &#125;
 
-      ...
+  ...
 
-      .box:nth-child(100) &#123;
-        background-color: black;
-      &#125;
+  .box:nth-child(100) &#123;
+    background-color: black;
+  &#125;
       </code></pre>
 
       <h4 id="part17">
@@ -494,28 +494,28 @@
       </h4>
       <pre><code>
   //scss
-      @each $member in thom, jonny, colin, phil &#123;
-        .bankmanager.#&#123;$member&#125; &#123;
-          background: url(&quot;images/#&#123;$member&#125;&quot;);
-        &#125;
-      &#125;
+  @each $member in thom, jonny, colin, phil &#123;
+    .bankmanager.#&#123;$member&#125; &#123;
+      background: url(&quot;images/#&#123;$member&#125;&quot;);
+    &#125;
+  &#125;
 
-      //css
-      .bankmanager.thom &#123;
-        background: url(&quot;images/thom&quot;);
-      &#125;
+  //css
+  .bankmanager.thom &#123;
+    background: url(&quot;images/thom&quot;);
+  &#125;
 
-      .bankmanager.jonny &#123;
-        background: url(&quot;images/jonny&quot;);
-      &#125;
+  .bankmanager.jonny &#123;
+    background: url(&quot;images/jonny&quot;);
+  &#125;
 
-      .bankmanager.colin &#123;
-        background: url(&quot;images/colin&quot;);
-      &#125;
+  .bankmanager.colin &#123;
+    background: url(&quot;images/colin&quot;);
+  &#125;
 
-      .bankmanager.phil &#123;
-        background: url(&quot;images/phil&quot;);
-      &#125;
+  .bankmanager.phil &#123;
+    background: url(&quot;images/phil&quot;);
+  &#125;
       </code></pre>
 
       <p class="space-on-top">
@@ -528,15 +528,15 @@
 
       <pre><code>
   //scss
-      @mixin band ($a, $b, $c, $d) &#123;
-        @each $member in $a, $b, $c, $d&#123;
-          .bandmember.#&#123;$member&#125; &#123;
-            background: url("images/#&#123;$member&#125;");
-            &#125;
-          &#125;
+  @mixin band ($a, $b, $c, $d) &#123;
+    @each $member in $a, $b, $c, $d&#123;
+      .bandmember.#&#123;$member&#125; &#123;
+        background: url("images/#&#123;$member&#125;");
         &#125;
+      &#125;
+    &#125;
 
-      @include band(thom, johnny, colin, phil);
+  @include band(thom, johnny, colin, phil);
 
       </code></pre>
 
@@ -562,29 +562,29 @@
 
       <p class="space-on-top">Even better still.</p>
       <pre><code>
-      @mixin band3 ($name, $members...) &#123;
-        @each $member in $members &#123;
-          .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
-          background: url(&quot;images/#&#123;$member&#125;&quot;);
-          &#125;
-        &#125;
+  @mixin band3 ($name, $members...) &#123;
+    @each $member in $members &#123;
+      .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
+      background: url(&quot;images/#&#123;$member&#125;&quot;);
       &#125;
-      @include band3(webheads, josef, emer, thomas);
+    &#125;
+  &#125;
+  @include band3(webheads, josef, emer, thomas);
       </code></pre>
 
       <p class="space-on-top">
       This will work, but it  is NOT recommended.</p>
       <pre><code>
   //scss
-      @mixin band4 ($name, $members) &#123;
-        @each $member in $members &#123;
-          .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
-            background: url(&quot;images/#&#123;$member&#125;&quot;);
-          &#125;
-        &#125;
+  @mixin band4 ($name, $members) &#123;
+    @each $member in $members &#123;
+      .#&#123;$name&#125;.bandmember.#&#123;$member&#125; &#123;
+        background: url(&quot;images/#&#123;$member&#125;&quot;);
       &#125;
+    &#125;
+  &#125;
 
-      @include band4(webheads, josef emer thomas);
+  @include band4(webheads, josef emer thomas);
       </code></pre>
 
       <h4 id="part18">
@@ -603,15 +603,15 @@
       the mixin is important:</p>
       <pre><code>
   //scss
-      @mixin box($size, $color) &#123;
-        width: $size;
-        height: $size;
-        background: $color;
-      &#125;
+  @mixin box($size, $color) &#123;
+    width: $size;
+    height: $size;
+    background: $color;
+  &#125;
 
-      .myclass &#123;
-        @include box(10px, blue); // Order of args matter
-      &#125;
+  .myclass &#123;
+    @include box(10px, blue); // Order of args matter
+  &#125;
       </code></pre>
 
       <p class="space-on-top">
@@ -620,8 +620,8 @@
 
       <pre><code>
   //scss
-      .myclass&#123;
-      @include box($color:blue, $size:10px);
+  .myclass&#123;
+    @include box($color:blue, $size:10px);
   &#125;
       </code></pre>
 
@@ -631,25 +631,25 @@
 
       <pre><code>
   //scss
-      @mixin box2($size:100px, $color:red, $display:block) &#123;
-        width: $size;
-        height: $size;
-        background: $color;
-        display: $display;
-      &#125;
+  @mixin box2($size:100px, $color:red, $display:block) &#123;
+    width: $size;
+    height: $size;
+    background: $color;
+    display: $display;
+  &#125;
 
-      .box1 &#123;
-        @include box2();
-      &#125;
-      .box2 &#123;
-        @include box2($display:inline);
-      &#125;
-      .box3 &#123;
-        @include box2($display: block, $size:200px, $color:green);
-      &#125;
-      .box4 &#123;
-        @include box2(100px, red);
-      &#125;
+  .box1 &#123;
+    @include box2();
+  &#125;
+  .box2 &#123;
+    @include box2($display:inline);
+  &#125;
+  .box3 &#123;
+    @include box2($display: block, $size:200px, $color:green);
+  &#125;
+  .box4 &#123;
+    @include box2(100px, red);
+  &#125;
       </code></pre>
 
       <p class="space-on-top">
@@ -657,22 +657,22 @@
       may be given as as mixin default argument</p>
       <pre><code>
   //scss
-      @mixin color ($height: null, $width: null)
-        &#123;
-        height: $height;
-        width : $width;
-        color: yellow;
-      &#125;
+  @mixin color ($height: null, $width: null)
+    &#123;
+    height: $height;
+    width : $width;
+    color: yellow;
+  &#125;
 
-      .block &#123;
-        @include color($height:10px)
-      &#125;
+  .block &#123;
+    @include color($height:10px)
+  &#125;
 
-      //css
-      .block &#123;
-        height: 10px;
-        color: yellow;
-      &#125;
+  //css
+  .block &#123;
+    height: 10px;
+    color: yellow;
+  &#125;
       </code></pre>
 
       <h4 id="part19">
@@ -693,14 +693,14 @@
       </p>
       <pre><code>
   //scss
-      @mixin old  &#123;
-        @warn "please use new version of this mixin";
-        height: 100px;
-        &#125;
+  @mixin old  &#123;
+    @warn "please use new version of this mixin";
+    height: 100px;
+    &#125;
 
-      h1 &#123;
-        @include old;
-      &#125;
+  h1 &#123;
+    @include old;
+  &#125;
       </code></pre>
 
       <h2>What We Definitely Missed</h2>
@@ -731,21 +731,21 @@
 
       <pre><code>
     //scss
-        $colors: (
-        primary: #FA6ACC,
-        secondary: #F02A52,
-        nav-bar: #09A6E4);
+    $colors: (
+    primary: #FA6ACC,
+    secondary: #F02A52,
+    nav-bar: #09A6E4);
 
-      div &#123;
-        background-color: map-get($colors, primary);
-        color: rgba(map-get($colors, secondary), 0.4);
-      &#125;
+    div &#123;
+      background-color: map-get($colors, primary);
+      color: rgba(map-get($colors, secondary), 0.4);
+    &#125;
 
     // css
-      div &#123;
-        background-color: #FA6ACC;
-        color: rgba(240, 42, 82, 0.4);
-      &#125;
+    div &#123;
+      background-color: #FA6ACC;
+      color: rgba(240, 42, 82, 0.4);
+    &#125;
       </code></pre>
 
       <p class="space-on-top">Useful function: 
@@ -757,29 +757,29 @@
 
       <pre><code>
   //scss
-      $colors: (
-        primary: #FA6ACC,
-        secondary: #F02A52,
-        nav-bar: (
-        primary: green,
-        secondary: red)
-        );
+  $colors: (
+    primary: #FA6ACC,
+    secondary: #F02A52,
+    nav-bar: (
+    primary: green,
+    secondary: red)
+    );
 
-      @function map-deep-get($map, $keys...) &#123;
-        @each $key in $keys &#123;
-          $map: map-get($map, $key);
-        &#125;
-          @return $map;
-        &#125;
+  @function map-deep-get($map, $keys...) &#123;
+    @each $key in $keys &#123;
+      $map: map-get($map, $key);
+    &#125;
+      @return $map;
+  &#125;
 
-      .nav &#123;    
-          color: map-deep-get($colors, nav-bar, primary);
-        &#125;
+  .nav &#123;    
+      color: map-deep-get($colors, nav-bar, primary);
+  &#125;
 
   //css
-      .nav &#123;
-        color: green;
-      &#125;
+  .nav &#123;
+    color: green;
+  &#125;
       </code></pre>
 
       <h4 id="part21">
@@ -798,24 +798,26 @@
       <code>@content</code>
       directive allows a code block to be passed to a mixin (or function?). 
       A super-goodie.</p>
-      <p>Good example (see  <a href="https://robots.thoughtbot.com/sasss-content-directive">here</a>)</p>
+      <p>Good example (see  
+      <a href="https://robots.thoughtbot.com/sasss-content-directive">
+        here</a>)</p>
 
       <pre><code>
   /scss
-      @mixin media($width) &#123;
-        @media only screen and (max-width: $width) &#123;
-          @content;
-        &#125;
-      &#125;
+  @mixin media($width) &#123;
+    @media only screen and (max-width: $width) &#123;
+      @content;
+    &#125;
+  &#125;
 
-      @include media(320px) &#123;
-        background: red;
-      &#125;
+  @include media(320px) &#123;
+    background: red;
+  &#125;
 
-      //css 
-      @media only screen and (max-width: 320px) &#123;
-        background: red;
-      &#125;
+  //css 
+  @media only screen and (max-width: 320px) &#123;
+    background: red;
+  &#125;
       </code></pre>
 
       <h4 id="part22">
@@ -832,24 +834,24 @@
       <p>Note local scoping within the css rule:</p>
       <pre><code>
   //scss
-      $text-color: blue;
-       .block &#123;
-          $text-color: red;
-          color: $text-color;
-        &#125;
+  $text-color: blue;
+   .block &#123;
+      $text-color: red;
+      color: $text-color;
+    &#125;
 
-      .block2&#123;
-        color: $text-color;
-      &#125;
+  .block2&#123;
+    color: $text-color;
+  &#125;
 
-      //css
-      .block &#123;
-        color: red;
-      &#125;
+  //css
+  .block &#123;
+    color: red;
+  &#125;
 
-      .block2 &#123;
-        color: blue;
-      &#125;
+  .block2 &#123;
+    color: blue;
+  &#125;
       </code></pre>
 
       <p class="space-on-top">Putting 
@@ -863,17 +865,17 @@
 
       <pre><code>
   //scss
-      $text-color: blue;
-      $text-color: red !default;
+  $text-color: blue;
+  $text-color: red !default;
 
-      .block &#123;
-        color: $text-color;
-      &#125;
+  .block &#123;
+    color: $text-color;
+  &#125;
 
-      //css
-      .block &#123;
-        color: blue;
-      &#125;
+  //css
+  .block &#123;
+    color: blue;
+  &#125;
       </code></pre>
 
       <p class="space-on-top">
@@ -883,18 +885,18 @@
 
       <pre><code>
   //scss
-      .block &#123;
-        $text-color: green !global;
-      &#125;
+  .block &#123;
+    $text-color: green !global;
+  &#125;
 
-      .block2 &#123;
-        color: $text-color;
-      &#125;
+  .block2 &#123;
+    color: $text-color;
+  &#125;
 
-      //css
-      .block2 &#123;
-        color: green;
-      &#125;
+  //css
+  .block2 &#123;
+    color: green;
+  &#125;
       </code></pre>
 
       <h4 id="part23">
@@ -910,23 +912,23 @@
       </h4>
       <pre><code>
   //scss
-      @mixin test() &#123;  
-        @if function-exists(myfunction)&#123;
-          height: 10px;
-        &#125;
-        @else &#123;
-          height: 30px;
-        &#125;
-      &#125;
+  @mixin test() &#123;  
+    @if function-exists(myfunction)&#123;
+      height: 10px;
+    &#125;
+    @else &#123;
+      height: 30px;
+    &#125;
+  &#125;
 
-      .block &#123; 
-        @include test
-      &#125;
+  .block &#123; 
+    @include test
+  &#125;
 
   //css
-      .block &#123;
-        height: 30px;
-      &#125;
+  .block &#123;
+    height: 30px;
+  &#125;
       </code></pre>
 
       <h4 id="part24">
@@ -945,18 +947,18 @@
       <pre><code>
 
   //scss
-      $list: 'this is list of words', 'more words', 'and more more words';
-        .block &#123;
-          $strings: str-length(nth($list,2));
-          height: #&#123;$strings&#125;px;
-          sel: to-upper-case(nth($list, 2));
-      &#125;
+  $list: 'this is list of words', 'more words', 'and more more words';
+    .block &#123;
+      $strings: str-length(nth($list,2));
+      height: #&#123;$strings&#125;px;
+      sel: to-upper-case(nth($list, 2));
+  &#125;
 
   //css
-      .block &#123;
-        height: 10px;
-        sel: "MORE WORDS";
-      &#125;
+  .block &#123;
+    height: 10px;
+    sel: "MORE WORDS";
+  &#125;
       </code></pre>
 
       <h4 id="part25">
@@ -1023,13 +1025,13 @@
       <p><strong>sass-globbing gem</strong> (auto included in Rails)</p>
 
       <pre><code>
-      gem install sass-globbing
+  gem install sass-globbing
 
-      // can now do the following: 
-      @import &quot;mixins/*
+  // can now do the following: 
+  @import &quot;mixins/*
 
-      // but need to run 
-      sass -r sass-globbing --watch   
+  // but need to run 
+  sass -r sass-globbing --watch   
       </code></pre>
 
       <p><strong>Recommendation</strong></p>
