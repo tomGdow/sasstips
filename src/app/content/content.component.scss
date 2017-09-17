@@ -43,7 +43,12 @@ h4 {
   padding-top: 1.5em;
 }
 .has-tip {
-	border-bottom: none;
-	font-weight: 300;
-	cursor: pointer;
+  border-bottom: solid 2px #1779ba;
+  color: black;
+  font-weight: 300;
+  cursor: pointer;
+  &:hover {
+    color: #1779ba;
+    border-bottom:none;
+  } 
 }
