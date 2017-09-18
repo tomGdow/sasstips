@@ -1,0 +1,43 @@
+.menu .menu-text {
+  padding: 0;
+}
+
+#navpic {
+  display: none
+} 
+
+@media screen and (min-width: 40em) {
+  /* Medium and up */
+  #navpic {
+    display:inline;
+  }
+
+  .top-bar {
+    background-color: white;
+  }
+
+  .menu {
+    background-color: black;
+  }
+
+  .menu a {
+    color: white;
+    font-weight: 700;
+    &:hover {
+      color: darken(white, 20%);
+    }
+  }
+
+  .is-dropdown-submenu-item a { 
+    background-color:#e6e6e6;
+    color: #1779ba;
+    font-weight: 300;
+  }
+
+  .dropdown.menu>li.is-dropdown-submenu-parent > a::after {
+    border: none;
+  }
+}
+
+
+
