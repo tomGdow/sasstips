@@ -85,7 +85,18 @@
       <p>Variables begin with a dollar sign.</p>
 
       <pre><code>
-  $primary-color: #0078A0;   // rgb(0,120,160) blue
+  //scss
+  $primary-color: #0078A0; 
+
+  .myclass &#123;
+  color: rgba($primary-color, .5);
+  &#125;
+
+  // css
+ .myclass &#123;
+    color: rgba(0, 120, 160, 0.5);
+  &#125;
+
       </code></pre>
 
       <h4 id="part4">
@@ -126,7 +137,8 @@
       <p>Partials are named with an underscore.
       (
       <code>_uname.scss</code>
-      , for example). 
+      , for example), but the underscore is ignored
+      when importing the file. 
       </p>
       <pre><code>
     @import &quot;uname&quot;;
@@ -298,7 +310,7 @@
             9 Watch for Changes</span></a>
       </h4>
       <pre><code>
-      sass --watch .   // watch the current folder 
+    sass --watch . // watch the current folder 
       </code></pre>
 
       <h4 id="part10">
@@ -312,8 +324,14 @@
            title="Return to Menu">
             10 Sass Libraries</span></a>
       </h4>
-      <p>Compass:  <a href="http://compass-style.org/">http://compass-style.org/</a></p>
-      <p>Bourbon:  <a href="http://bourbon.io/">http://bourbon.io/</a></p>
+      <p class="left-margin">
+      Compass:  
+      <a href="http://compass-style.org/">http://compass-style.org/</a>
+      </p>
+      <p class="left-margin">
+      Bourbon:  
+      <a href="http://bourbon.io/">http://bourbon.io/</a>
+      </p>
 
       <h4 id="part11">
         <a href="#navbar">
@@ -326,7 +344,9 @@
            title="Return to Menu">
             11 Sassmeister</span></a>
       </h4>
-      <p><a href="https://www.sassmeister.com/">https://www.sassmeister.com/</a></p>
+      <p class="left-margin">
+      <a href="https://www.sassmeister.com/">https://www.sassmeister.com/</a>
+      </p>
       <p>Sassmeister was built by   <a href="http://jedfoster.com/code">Jed Foster</a>
       and <a href="http://www.dalesande.com/">Dale Sande</a></p>
 
@@ -361,17 +381,27 @@
            data-disable-hover="false" 
            tabindex="2" 
            title="Return to Menu">
-            13 Built-in functions</span></a>
+            13 Built-in functions
+          </span></a>
       </h4>
       <p>There are loads of these.</p>
 
       <pre><code>
   lighten($text-color, 30%)
   darken($text-color, 30%)
+  invert($color)
+  unquote($string)
+  quote­($string)
+  mixin-exists($name)
       </code></pre>
       <p>There is a cheat-sheet 
       <a href="https://gist.github.com/AllThingsSmitty/3bcc79da563df756be46">
-        here.</a></p>
+        here.</a>
+      But much more can be found
+      at the official 
+      <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">
+        sass-lang</a>
+      site</p>
 
       <h4 id="part14">
         <a href="#navbar">
@@ -421,9 +451,8 @@
       </h4>
       <p>Note 
       <code>
-        #&#123; &hellip; &#125;
-      </code>
-      , just like Ruby,</p>
+        #&#123; &hellip; &#125;</code>, just like Ruby.
+      </p>
 
       <pre><code>
   //scss
@@ -684,7 +713,7 @@
            data-disable-hover="false" 
            tabindex="2" 
            title="Return to Menu">
-            19  Include Warning Message in Mixin</span></a>
+            19 Warning Message in Mixin</span></a>
       </h4>
       <p class="space-on-top">
       The message will appear in 
@@ -791,7 +820,7 @@
            data-disable-hover="false" 
            tabindex="2" 
            title="Return to Menu">
-            21  Pass Code-Block to Mixin</span></a>
+            21 Pass Code-Block to Mixin</span></a>
       </h4>
       <p>
       The
@@ -945,7 +974,6 @@
       <p>There are loads of these.</p>
 
       <pre><code>
-
   //scss
   $list: 'this is list of words', 'more words', 'and more more words';
     .block &#123;
@@ -970,7 +998,7 @@
            data-disable-hover="false" 
            tabindex="2" 
            title="Return to Menu">
-            25 Persistently Edit Sass from Chrome Browser</span></a>
+            25 Persistently Edit Sass in Chrome</span></a>
       </h4>
       <p class="space-on-top">
       Need to be running Chrome on development machine.
@@ -1010,8 +1038,12 @@
            data-disable-hover="false" 
            tabindex="2" 
            title="Return to Menu">
-            26 Miscellaneous</span></a>
+           26 Miscellaneous</span></a>
       </h4>
+      <p class="space-on-top">
+      <strong>Official Sass language site:</strong>
+      <a href="http://sass-lang.com/">Sass-Lang</a>
+      </p>
       <p> <strong>css-reset</strong> 
       by Eric Meyers: 
       <a href="https://meyerweb.com/eric/tools/css/reset/">
