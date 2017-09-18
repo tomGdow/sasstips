@@ -9,7 +9,7 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
-  bonnie="./assets/images/bonnie2.jpeg";
+  gravatar="https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40";
 
   ngOnInit() {
   }
