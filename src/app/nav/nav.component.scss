@@ -19,6 +19,10 @@
   cursor: pointer;
 }
 
+#menu-toc-right {
+  display: none;
+}
+
 @media screen and (min-width: 40em) {
   /* Medium and up */
 
@@ -34,6 +38,11 @@
 
   .top-bar {
     background-color: white;
+  }
+
+  .top-bar-right {
+
+    border: 1px solid black;
   }
 
   .menu {
@@ -55,6 +64,13 @@
 
   .dropdown.menu>li.is-dropdown-submenu-parent > a::after {
     border: none;
+  }
+  #menu-toc-left {
+    display: none;
+  } 
+
+  #menu-toc-right {
+    display: inline;
   }
 }
 
