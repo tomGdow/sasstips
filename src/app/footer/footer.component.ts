@@ -9,6 +9,9 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
+  tomgdowgit="Github (tomgdow)";
+  jzgit="Github (Josef Zacek)";
+
   ngOnInit() {
   }
 
