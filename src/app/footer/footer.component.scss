@@ -4,10 +4,15 @@
   background-color: black;
   padding: 0.5em;
   color: white; 
+  text-align: center;
 } 
 
 .has-tip {
+  font-weight:300;
   border-bottom: none;
   cursor: pointer;
-}
-
+  color: darken(white, 20%);
+  &:hover {
+    color: white;
+  }
+} 

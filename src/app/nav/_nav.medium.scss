@@ -1,0 +1,52 @@
+.top-bar {
+  background-color: white;
+}
+
+.top-bar-right {
+  border: 1px solid black;
+}
+
+.menu {
+  background-color: black;
+  a {
+    color: white;
+    font-weight: 700;
+    &:hover {
+      color: darken(white, 20%);
+    }
+  }
+}
+
+.is-dropdown-submenu-item a { 
+  background-color:#e6e6e6;
+  color: #1779ba;
+  font-weight: 300;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent > a::after {
+  border: none;
+}
+
+.has-tip  {
+  font-weight: 700;
+}
+
+
+#menu-toc-left {
+  display: none;
+} 
+
+#menu-toc-right {
+  display: inline;
+}
+
+#navpic {
+  display:inline;
+  padding-left: 0;
+  img {
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
