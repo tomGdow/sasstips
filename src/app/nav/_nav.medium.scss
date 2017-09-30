@@ -1,9 +1,14 @@
 .top-bar {
   background-color: white;
-}
 
-.top-bar-right {
-  border: 1px solid black;
+  &-right {
+    border: 1px solid black;
+    height: 2.5em;
+  }
+
+  &-left {
+    height: 2.5em;
+  }
 }
 
 .menu {
